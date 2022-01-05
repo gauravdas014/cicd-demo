@@ -1,7 +1,7 @@
 name: Deploy TO-DO App
 
 env:
-  S3_BUCKET_NAME: gd-todo-app
+  S3_BUCKET_NAME: gdsc-nits-ci-demo
   AWS_REGION: ap-south-1
 
 on:
@@ -19,8 +19,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Install Dependencies
